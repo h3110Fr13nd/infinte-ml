@@ -1,0 +1,45 @@
+[project]
+name = "infinite-ml"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ipykernel>=6.29.5",
+    "ipywidgets>=8.1.5",
+    "matplotlib>=3.10.1",
+    "numpy>=2.2.3",
+    "pandas>=2.2.3",
+    "scikit-learn>=1.6.1",
+    "scipy>=1.15.2",
+    "seaborn>=0.13.2",
+    "tensorboard>=2.19.0",
+    "torch>=2.6.0",
+    "triton>=3.2.0",
+    "pybind11>=2.11.1",
+    "setuptools>=76.0.0",
+]
+authors = [
+    { name = "Author One", email = "author.one@example.com" },
+    { name = "Author Two", email = "author.two@example.com" }
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "pybind11>=2.11.1", "cmake>=3.18"]
+build-backend = "setuptools.build_meta"
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
+[tool.uv.sources]
+infinite-ml = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "infinite-ml",
+    "isort>=6.0.1",
+    "pytest>=8.3.5",
+]
